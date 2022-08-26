@@ -1,0 +1,5 @@
+package jpahook.jpashop.domain;
+
+public enum OrderStatus {
+    ORDER, CANCEL
+}
