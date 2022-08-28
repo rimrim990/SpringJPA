@@ -24,10 +24,10 @@ public class Category {
             joinColumns = @JoinColumn(name = "category_id"),
             inverseJoinColumns = @JoinColumn(name = "item_id"))
     // many to many 를 일대 다 관계로 풀어내는 중간 테이블 필요
-    // 실전에서는 쓰지 말자 - 중간 테이블 수정이 불가능하고 운영하기 어렵다고 함
+    // 실무에서는 쓰지 말자 - 중간 테이블 수정이 불가능하고 운영하기 어렵다고 함
     private List<Item> items = new ArrayList<>();
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")
     private Category parent;
 
